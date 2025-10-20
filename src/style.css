@@ -1,0 +1,21 @@
+html, body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  
+}
+body {
+  display: flex;
+  justify-content: center;
+ 
+}
+.error {
+    color: red;
+    position: absolute;
+}
+@media(max-width: 575px) {
+.error {
+  font-size: 14px;
+}
+}
