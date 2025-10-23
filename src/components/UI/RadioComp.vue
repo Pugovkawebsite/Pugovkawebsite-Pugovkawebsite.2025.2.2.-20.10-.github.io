@@ -1,7 +1,7 @@
 <template>
     <div v-for="radio in radios" :key="radio.id" class="radio__frame">
          <input :id="radio.id"  class="radio-elem" type="radio" name="budget" :value="radio.value" v-model="radio.budget">
-        <label :for="radio.text">{{radio.value}}</label>
+        <label :for="radio.id">{{radio.value}}</label>
     </div>
     
   

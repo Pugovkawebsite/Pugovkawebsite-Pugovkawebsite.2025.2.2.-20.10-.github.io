@@ -15,21 +15,13 @@
         <div class='error error__service' v-if="error" >{{ error }}</div>
         </frame-component>
             
-        <div class="checkbox-button">
-            
-            <btn-component @click="toggle3" label='Previous step' color="button__white" size="button-size__193px" font="button-font__previous"></btn-component>
-            
-            <btn-component @click="toggle2"></btn-component>
-            
-            
+        <div class="checkbox-button">            
+            <btn-component @click="toggle3" label='Previous step' color="button__white" size="button-size__193px" font="button-font__previous"></btn-component>            
+            <btn-component @click="toggle2"></btn-component>           
         </div>
         
-    </form>
-  
-  
-  </div>
-
-  
+    </form>  
+  </div>  
 </template>
 
 
@@ -73,23 +65,20 @@ import LineComponent from './LineComponent.vue';
         },
         methods: {
         saveInput() {
+                this.obj = {};
            for (const checkbox of this.checkboxes) {
 
                     if (checkbox.checked) {
                     this.obj[checkbox.id] = checkbox.text;
                  
-                } else {
-                    this.error = 'Сервисы не выбраны';
-                }
+                } 
                      
                               
            }
             this.$emit('save', this.obj);  
-            for (const checkbox of this.checkboxes) {
-                if (checkbox.checked) {
-                    checkbox.checked = false;
-                }
-            }
+            this.checkboxes.forEach(checkbox => checkbox.checked = false);
+            
+            
                       
             },  
                       
